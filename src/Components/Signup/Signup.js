@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useContext, useDebugValue} from 'react'
-import { SignupContext } from '../../App'
+import { SignupContext, ProfilesContext } from '../../App'
 import { useNavigate } from 'react-router-dom'
 import "./Signup.css"
 function Signup({changePage}) {
     const navigate = useNavigate()
     let userDetails = useContext(SignupContext)
+    let profiles = useContext(ProfilesContext)
     const [formFilled, setFormFilled] = useState(false)
     const [role, setRole] = useState("student")
     const [name, setName] = useState("")
@@ -37,6 +38,7 @@ function Signup({changePage}) {
     function setSignupContext(e){
         e.preventDefault()
         userDetails = {name: name, email: email, password: password, role: role}
+        profiles.push(userDetails)
         navigate("/profile")
     }
 

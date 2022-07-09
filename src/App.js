@@ -3,6 +3,7 @@ import {
   Routes,
   Route,
   Navigate,
+  Link,
 } from "react-router-dom";
 
 import React, { createContext } from "react";
@@ -20,6 +21,7 @@ import NavBar from "./Components/Navbar";
 export const FundsContext = createContext();
 export const UsersContext = createContext();
 export const SignupContext = createContext();
+export const ProfilesContext = createContext();
 
 function App() {
   const funds = [
@@ -94,11 +96,34 @@ function App() {
       funders: ['Marcus Dad', 'Marcus Mom', 'Marcus Ah Ma']
     },
   ];
+  const profiles=[
+    {
+      name : "Jole Lim Chu Kang",
+      email : "chuchu@gmail.com",
+      password : "123456789",
+      School: "NUS",
+      degree: "Computer Science",
+      year: 1,
+      LI: "linkedin.com/chukang",
+      profilepic: {},
+      resume: {},
+      role: "student"
+    },
+    {
+      name : "Ivan Teo Meng Ern",
+      email : "teoboy@gmail.com",
+      password : "123456789",
+      LI: "linkedin.com/chukang",
+      profilepic: {},
+      role: "donor"
+    }
+  ]
   return (
     <>
     <FundsContext.Provider value={funds}>
     <UsersContext.Provider value={["here", "there"]}>
     <SignupContext.Provider value={{}} >
+    <ProfilesContext.Provider value={{}} >
       <Router>
         <Routes>
           <Route exact path="/landing" element={<LandingPage />} />
@@ -112,9 +137,11 @@ function App() {
           <Route path="/*" element={<Navigate to="/landing" />} />
         </Routes>
       </Router>
+    </ProfilesContext.Provider>
     </SignupContext.Provider>
     </UsersContext.Provider>
     </FundsContext.Provider>
+
     </>
   );
 }
