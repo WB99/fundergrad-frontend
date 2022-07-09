@@ -34,12 +34,13 @@
 .profileSummary{
     display: flex;
     flex-direction:column; 
-    text-align: center;
+    text-align: left;
     margin-top:2.4rem;
     margin-right:2.4rem;
 
 }
-.input{
+.inputFile{
     margin-left: 2rem;
     margin-bottom: 3rem;
 }
+

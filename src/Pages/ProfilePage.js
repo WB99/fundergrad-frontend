@@ -1,9 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import NavBar from "../Components/Navbar";
 import classes from "./ProfilePage.module.css";
 import user from "../Assets/user.png";
 
 function ProfilePage() {
+  const [dataUri, setDataUri] = useState(user);
+  const textDetails = useRef();
+
+  const [userSummary, setUserSummary] = useState({
+    text: "Click To Edit User Summary",
+    isInEditMode: false,
+  });
+
+  const changeEditMode = () => {
+    console.log("edit mode");
+    setUserSummary({
+      text: userSummary.value,
+      isInEditMode: !userSummary.isInEditMode,
+    });
+  };
+
+  const updateTextValue = () => {
+    const text = textDetails.current.value;
+    setUserSummary({
+      text: text,
+      isInEditMode: false,
+    });
+  };
+
   const fileToDataUri = (file) =>
     new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -12,8 +36,6 @@ function ProfilePage() {
       };
       reader.readAsDataURL(file);
     });
-
-  const [dataUri, setDataUri] = useState(user);
   const onChange = (file) => {
     if (!file) {
       setDataUri("");
@@ -38,21 +60,29 @@ function ProfilePage() {
                 <img className={classes.profileImage} src={dataUri} />
                 <div className={classes.profileSummary}>
                   <h1>Joel Lim</h1>
-                  <text>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
-                  </text>
+                  {userSummary.isInEditMode ? (
+                    <div>
+                      <input
+                        className={classes.inputSummary}
+                        type="text"
+                        defaultValue={userSummary.text}
+                        ref={textDetails}
+                      />
+                      <button onClick={updateTextValue}>✔️</button>
+                    </div>
+                  ) : (
+                    <div onClick={changeEditMode}>{userSummary.text}</div>
+                  )}
                 </div>
               </div>
-
               <input
-                className={classes.input}
+                className={classes.inputFile}
                 type="file"
                 onChange={(event) => onChange(event.target.files[0] || null)}
               />
+            </div>
+            <div className={classes.inputFile}>
+              
             </div>
           </div>
           {/* Right Side */}
