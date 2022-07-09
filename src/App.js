@@ -19,7 +19,7 @@ import NavBar from "./Components/Navbar";
 
 export const FundsContext = createContext();
 export const UsersContext = createContext();
-
+export const SignupContext = createContext();
 
 function App() {
   const funds = [
@@ -98,6 +98,7 @@ function App() {
     <>
     <FundsContext.Provider value={funds}>
     <UsersContext.Provider value={["here", "there"]}>
+    <SignupContext.Provider value={{}} >
       <Router>
         <Routes>
           <Route exact path="/landing" element={<LandingPage />} />
@@ -111,6 +112,7 @@ function App() {
           <Route path="/*" element={<Navigate to="/landing" />} />
         </Routes>
       </Router>
+    </SignupContext.Provider>
     </UsersContext.Provider>
     </FundsContext.Provider>
     </>

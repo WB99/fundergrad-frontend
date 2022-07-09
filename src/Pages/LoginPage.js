@@ -13,8 +13,8 @@ function LoginPage() {
     navigate("/registration");
   }
   return (
-    <div>
-    <NavBar />
+    <div className="land">
+        <h1>F'Undergrad</h1>
       <div className={classes.root}>
         <div className={classes.left}>
           <div className={classes.h1}>
