@@ -6,10 +6,39 @@
 .landing-page-holder{
     width: 100%;
     overflow: hidden;
-    height: 60%;
+    height: 80%;
     background-image: url("../../Assets/hands.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.quote{
+    font-size: 100px;
+    color: white;
+}
+
+.button-holder-landing{
+    width: 420px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px
+}
+
+.landing-button{
+    height: 56px;
+    width: 200px;
+    border-radius: 100px;
+    border: 1px solid #3887b9;
+    background-color: white;
+    font-size: 26px;
+}
+
+.landing-button.signup{
+    background-color: #3887b9;
+    color: white;
 }
