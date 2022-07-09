@@ -16,7 +16,7 @@ function RegistrationPage() {
             Empowering Students
           </div>
         </div>
-        <div className="right">
+        <div id="right">
           <Singup />
         </div>
 
