@@ -3,6 +3,8 @@ import NavBar from "../Components/Navbar";
 import classes from "./ProfilePage.module.css";
 import user from "../Assets/user.png";
 
+import ProfileForm from "../Components/ProfileForm";
+
 function ProfilePage() {
   const [dataUri, setDataUri] = useState(user);
   const textDetails = useRef();
@@ -81,8 +83,8 @@ function ProfilePage() {
                 onChange={(event) => onChange(event.target.files[0] || null)}
               />
             </div>
-            <div className={classes.inputFile}>
-              
+            <div>
+              <ProfileForm />
             </div>
           </div>
           {/* Right Side */}

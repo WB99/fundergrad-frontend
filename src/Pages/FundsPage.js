@@ -8,13 +8,14 @@ export default function FundsPage() {
     {
       fundID: 1,
       fundName: "Medicine Fund",
-      fundDesc: "Lorem ipsum blah blah",
+      fundDesc: "A fund for students pursuing a degree in Medicine. Started by Dr. Ong Tan Cheong, Senior Consultant at Tan Tock Seng Hospital",
       round: 1,
       registrationExpiration: "12 Jul 2022",
       fundingExpiration: "10 Jul 2022",
       currentFunds: 10000,
       totalSlots: 10,
       availableSlots: 20,
+      requirements: ['Pursuing Bachelors in Medicine']
     },
     {
       fundID: 2,
