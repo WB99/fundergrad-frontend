@@ -7,17 +7,13 @@ function ProfileForm() {
       <form className={classes.signup}>
         <text>School :</text>
         <input className={classes.input} />
-        <text>Degree :</text>
+        <text className={classes.label}>Degree :</text>
         <input className={classes.input} />
-        <text>Year of Study :</text>
+        <text className={classes.label}>Year of Study :</text>
         <input className={classes.input} />
-        <text>LinkedIn :</text>
+        <text className={classes.label}>LinkedIn :</text>
         <input className={classes.input} />
-        <input
-          className={classes.submit}
-          type="submit"
-          value="Update Profile"
-        ></input>
+        <button className={classes.submit}>Upload Profile</button>
       </form>
     </div>
   );

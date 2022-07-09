@@ -42,50 +42,79 @@ function Signup({changePage}) {
         navigate("/profile")
     }
 
-    useEffect(()=>{
-        matchHandle()
-    }, [passwordConfirm])
+  useEffect(() => {
+    matchHandle();
+  }, [passwordConfirm]);
 
-    useEffect(
-        ()=>{
-            if(name!="" && email!="" && password.length>8 && password == passwordConfirm){
-                setFormFilled(true)
-            }
-            else{
-                setFormFilled(false)
-            }
-        }, [passwordConfirm, name, email, password]
-    )
-    return ( 
-        <form className="signup">
-            <div className="create-account">Create an account</div>
-            <div className="select">
-                {role === "student" ? <div className="select clicker student selected">
-                    Student
-                </div>
-                : <div className="select clicker student" onClick={() => setRole("student")}>
-                Student
-            </div>
-            }
-                {role === "donor" ? <div className="select clicker selected">
-                    Donor
-                </div>
-                : <div className="select clicker" onClick={() => setRole("donor")}>
-                Donor
-            </div>
-            }
-            </div>
-            <input placeholder='Name' onChange={handleName}></input>
-            <input placeholder='Email' onChange={handleEmail}></input>
-            <input placeholder='Password' onChange={handlePassword}></input>
-            <input placeholder='Confirm password' onChange={handlePasswordConfirm}></input>
-            {match ? null : <div className='matchy'>Passwords do not match</div>}
-            {formFilled ? <button className="submit" onClick={setSignupContext}>Create Account</button> : <button className="submit" onClick={(e) => {e.preventDefault(); setSubmitCount(submitCount + 1)}} >Create Account</button>}
-            {formFilled == false && submitCount > 0 ? <div className="matchy">Please ensure a name, email and password of more than length 8 is submitted.</div> : null}
-            <div>Have an account?</div>
-            <div className="changepage" onClick={changePage}>Log in here!</div>
-        </form>
-     );
+  useEffect(() => {
+    if (
+      name != "" &&
+      email != "" &&
+      password.length > 8 &&
+      password == passwordConfirm
+    ) {
+      setFormFilled(true);
+    } else {
+      setFormFilled(false);
+    }
+  }, [passwordConfirm, name, email, password]);
+  return (
+    <form className="signup">
+      <div className="create-account">Create an account</div>
+      <div className="select">
+        {role === "student" ? (
+          <div className="select clicker student selected">Student</div>
+        ) : (
+          <div
+            className="select clicker student"
+            onClick={() => setRole("student")}
+          >
+            Student
+          </div>
+        )}
+        {role === "donor" ? (
+          <div className="select clicker selected">Donor</div>
+        ) : (
+          <div className="select clicker" onClick={() => setRole("donor")}>
+            Donor
+          </div>
+        )}
+      </div>
+      <input placeholder="Name" onChange={handleName}></input>
+      <input placeholder="Email" onChange={handleEmail}></input>
+      <input placeholder="Password" onChange={handlePassword}></input>
+      <input
+        placeholder="Confirm password"
+        onChange={handlePasswordConfirm}
+      ></input>
+      {match ? null : <div className="matchy">Passwords do not match</div>}
+      {formFilled ? (
+        <button className="submit" onClick={setSignupContext}>
+          Create Account
+        </button>
+      ) : (
+        <button
+          className="submit"
+          onClick={(e) => {
+            e.preventDefault();
+            setSubmitCount(submitCount + 1);
+          }}
+        >
+          Create Account
+        </button>
+      )}
+      {formFilled == false && submitCount > 0 ? (
+        <div className="matchy">
+          Please ensure a name, email and password of more than length 8 is
+          submitted.
+        </div>
+      ) : null}
+      <div>Have an account?</div>
+      <div className="changepage" onClick={changePage}>
+        Log in here!
+      </div>
+    </form>
+  );
 }
 
 export default Signup;

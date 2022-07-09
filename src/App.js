@@ -3,9 +3,9 @@ import {
   Routes,
   Route,
   Navigate,
-  Link,
 } from "react-router-dom";
 
+import "bootstrap/dist/css/bootstrap.min.css";
 import React, { createContext } from "react";
 import LandingPage from "./Pages/LandingPage/LandingPage";
 import FundsPage from "./Pages/FundsPage";
@@ -13,7 +13,7 @@ import FundPage from "./Pages/FundPage";
 import ProfilePage from "./Pages/ProfilePage";
 import RegistrationPage from "./Pages/RegistrationPage";
 import StudentsPage from "./StudentsPage/StudentsPage";
-import StudentPage from "./StudentsPage/StudentPage"
+import StudentPage from "./StudentsPage/StudentPage";
 import LoginPage from "./Pages/LoginPage";
 import { Navbar } from "react-bootstrap";
 import NavBar from "./Components/Navbar";
@@ -96,7 +96,7 @@ function App() {
       funders: ['Marcus Dad', 'Marcus Mom', 'Marcus Ah Ma']
     },
   ];
-  const profiles=[
+  const profiles = [
     {
       name : "Jole Lim Chu Kang",
       email : "chuchu@gmail.com",
@@ -123,7 +123,7 @@ function App() {
     <FundsContext.Provider value={funds}>
     <UsersContext.Provider value={["here", "there"]}>
     <SignupContext.Provider value={{}} >
-    <ProfilesContext.Provider value={{}} >
+    <ProfilesContext.Provider value={profiles} >
       <Router>
         <Routes>
           <Route exact path="/landing" element={<LandingPage />} />
