@@ -1,13 +1,16 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import NavBar from "../Components/Navbar";
 import classes from "./ProfilePage.module.css";
 import user from "../Assets/user.png";
+import { SignupContext } from "../App";
 
 import ProfileForm from "../Components/ProfileForm";
 
 function ProfilePage() {
   const [dataUri, setDataUri] = useState(user);
   const textDetails = useRef();
+  const userDetails = useContext(SignupContext);
+  console.log(userDetails);
 
   const [userSummary, setUserSummary] = useState({
     text: "Click To Edit User Summary",
@@ -58,7 +61,7 @@ function ProfilePage() {
 
   return (
     <>
-    <NavBar />
+      <NavBar />
       <div className={classes.root}>
         <h1>Profile Page</h1>
         <div className={classes.splitScreen}>
@@ -68,7 +71,7 @@ function ProfilePage() {
               <div className={classes.profileWriteUp}>
                 <img className={classes.profileImage} src={dataUri} />
                 <div className={classes.profileSummary}>
-                  <h1>Joel Lim</h1>
+                  <h1>{userDetails.name}</h1>
                   {userSummary.isInEditMode ? (
                     <div>
                       <input
@@ -89,15 +92,14 @@ function ProfilePage() {
                 onChange={(event) => onChange(event.target.files[0] || null)}
               />
             </div>
-            <div>
-              <ProfileForm />
+
+            <div className={classes.uploadResume}>
+              <span className={classes.uploadText}>Upload Resume</span>
             </div>
           </div>
           {/* Right Side */}
           <div className={classes.rightPane}>
-            <div className={classes.uploadResume}>
-              <text className={classes.uploadText}>Upload Resume</text>
-            </div>
+            <ProfileForm />
           </div>
         </div>
       </div>
