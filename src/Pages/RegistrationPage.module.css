@@ -1,0 +1,41 @@
+.root{
+    width: 100%;
+    height: calc(100vh - 64px);
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.h1{
+    font-size: 86px;
+    font-family: 'Lobster', cursive;
+    background: linear-gradient(90deg, #3887B9 9.72%, #000000 109.28%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.h2{
+    font-size: 42px;
+    font-family: 'Lobster', cursive;
+    background: linear-gradient(90deg, #3887B9 0%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.left{
+    height: 60%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid lightgray;
+}
+
+div #right{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
