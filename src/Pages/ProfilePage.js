@@ -24,10 +24,17 @@ function ProfilePage() {
 
   const updateTextValue = () => {
     const text = textDetails.current.value;
-    setUserSummary({
-      text: text,
-      isInEditMode: false,
-    });
+    if (text == "") {
+      setUserSummary({
+        text: "Click To Edit User Summary",
+        isInEditMode: false,
+      });
+    } else {
+      setUserSummary({
+        text: text,
+        isInEditMode: false,
+      });
+    }
   };
 
   const fileToDataUri = (file) =>
@@ -65,7 +72,6 @@ function ProfilePage() {
                   {userSummary.isInEditMode ? (
                     <div>
                       <input
-                        className={classes.inputSummary}
                         type="text"
                         defaultValue={userSummary.text}
                         ref={textDetails}
