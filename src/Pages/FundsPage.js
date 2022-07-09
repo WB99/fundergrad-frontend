@@ -22,11 +22,6 @@ export default function FundsPage() {
     setFilteredFunds(filtered)
   }, [showCurrentlyFunding])
 
-  const addFund = () => {
-    funds.push({
-      test: 'new FUnd'
-    })
-  }
   return (
     <>
     <NavBar/>
@@ -34,7 +29,6 @@ export default function FundsPage() {
     <input className={classes.input} onChange={toggleCurrentHandler} type="checkbox"/>
     Currently Funding
     </div>
-    <button onClick={addFund}>test</button>
     <div className={classes.root}>
       {filteredFunds.map((fund) => (
         <FundCard data={fund} key={fund.fundName} />

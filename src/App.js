@@ -31,7 +31,8 @@ function App() {
       totalSlots: 10,
       availableSlots: 20,
       registration: true,
-      requirements: ['Pursuing Bachelors in Medicine']
+      requirements: ["Pursuing Bachelors in Medicine", "Enrolled in a local univeristy", "Passionate in the healthcare industry"],
+      funders: ['Marcus Dad', 'Marcus Mom', 'Marcus Ah Ma']
     },
     {
       fundID: 2,
@@ -44,6 +45,8 @@ function App() {
       totalSlots: 10,
       registration: true,
       availableSlots: 20,
+      requirements: ["Pursuing Bachelors in Law", "Enrolled in a local univeristy", "Passionate in the legal industry"],
+      funders: ['Marcus Dad', 'Marcus Mom', 'Marcus Ah Ma']
     },
     {
       fundID: 3,
@@ -56,6 +59,8 @@ function App() {
       totalSlots: 10,
       registration: true,
       availableSlots: 20,
+      requirements: ["Pursuing Bachelors in Business", "Enrolled in a local univeristy", "Passionate in the business industry"],
+      funders: ['Marcus Dad', 'Marcus Mom', 'Marcus Ah Ma']
     },
     {
       fundID: 4,
@@ -68,6 +73,8 @@ function App() {
       totalSlots: 10,
       availableSlots: 20,
       registration: true,
+      requirements: ["Pursuing Bachelors in Medicine", "Enrolled in a local univeristy", "Passionate in the their respective industry"],
+      funders: ['Marcus Dad', 'Marcus Mom', 'Marcus Ah Ma']
     },
     {
       fundID: 5,
@@ -80,6 +87,8 @@ function App() {
       totalSlots: 10,
       availableSlots: 20,
       registration: false,
+      requirements: ["Pursuing Bachelors in Finance", "Enrolled in a local univeristy", "Passionate in the finance industry"],
+      funders: ['Marcus Dad', 'Marcus Mom', 'Marcus Ah Ma']
     },
   ];
   return (

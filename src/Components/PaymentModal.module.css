@@ -1,0 +1,36 @@
+.root{
+    background-color: #F5F5F5;
+    z-index: 99;
+    position: fixed;
+    top: 50%;
+    left: 50%;  
+    transform: translate(-50%,-50%);
+    border-radius: 1rem;
+    padding: 2rem;
+    font-family: 'Futura';
+}
+.image{
+    height: 16rem;
+    margin: 1rem
+}
+.button{
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: #d7ebf3;
+    margin-top: 1rem;
+    transition: 0.2s ease-in-out;
+}
+.button:hover{
+    background-color: #a1d3f7;
+}
+.bottom{
+    display: flex;
+    justify-content: center;
+}
+.imageContainer{
+    display: flex;
+    justify-content: center;
+}
