@@ -7,7 +7,7 @@ import {
 
 import React from "react";
 
-import LandingPage from "./Pages/LandingPage";
+import LandingPage from "./Pages/LandingPage/LandingPage";
 
 function App() {
   return (
