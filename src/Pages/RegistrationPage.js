@@ -1,9 +1,15 @@
 import React from "react";
+import { useState } from "react";
+import Login from "../Components/Login/Login";
 import NavBar from "../Components/Navbar";
 import Singup from "../Components/Signup/Signup";
 import classes from "./RegistrationPage.module.css"
 
 function RegistrationPage() {
+  const [login, setLogin] = useState(false)
+  function changePage() {
+    setLogin(!login)
+  }
   return (
     <div>
       <NavBar/>
@@ -17,7 +23,7 @@ function RegistrationPage() {
           </div>
         </div>
         <div id="right">
-          <Singup />
+          { login === false ? <Singup changePage={changePage} /> : <Login changePage={changePage}/> }
         </div>
 
       </div>

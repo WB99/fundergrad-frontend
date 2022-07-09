@@ -52,3 +52,9 @@ form input{
 .select.clicker.selected{
     font-weight: bold;
 }
+
+.changepage{
+    color: lightblue;
+    text-decoration: underline;
+    cursor: pointer;
+}
