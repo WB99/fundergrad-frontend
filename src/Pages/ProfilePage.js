@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from "react";
+import React, { useState, useRef, useContext, useEffect } from "react";
 import NavBar from "../Components/Navbar";
 import classes from "./ProfilePage.module.css";
 import user from "../Assets/user.png";
@@ -8,9 +8,12 @@ import ProfileForm from "../Components/ProfileForm";
 
 function ProfilePage() {
   const [dataUri, setDataUri] = useState(user);
+  const [userDetails, setUserDetails] = useState({})
   const textDetails = useRef();
-  const userDetails = useContext(SignupContext);
-  console.log(userDetails);
+  useEffect(()=>{
+    setUserDetails(JSON.parse(localStorage.getItem("user"))) 
+    // setUser(userDetails)
+  }, [])
 
   const [userSummary, setUserSummary] = useState({
     text: "Click To Edit User Summary",

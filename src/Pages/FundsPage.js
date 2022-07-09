@@ -12,7 +12,6 @@ export default function FundsPage() {
   
   const toggleCurrentHandler = () => {
     setShowCurrentlyFunding(!showCurrentlyFunding)
-    console.log(showCurrentlyFunding)
   }
 
   const [filteredFunds, setFilteredFunds] = useState([])
@@ -20,6 +19,7 @@ export default function FundsPage() {
   useEffect(()=>{
     const filtered = showCurrentlyFunding ? funds.filter((fund)=>(fund.registration)) : funds.filter((fund)=>(!fund.registration))
     setFilteredFunds(filtered)
+    console.log(funds)
   }, [showCurrentlyFunding])
 
   return (
