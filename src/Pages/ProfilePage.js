@@ -24,10 +24,17 @@ function ProfilePage() {
 
   const updateTextValue = () => {
     const text = textDetails.current.value;
-    setUserSummary({
-      text: text,
-      isInEditMode: false,
-    });
+    if (text == "") {
+      setUserSummary({
+        text: "Click To Edit User Summary",
+        isInEditMode: false,
+      });
+    } else {
+      setUserSummary({
+        text: text,
+        isInEditMode: false,
+      });
+    }
   };
 
   const fileToDataUri = (file) =>
@@ -40,7 +47,7 @@ function ProfilePage() {
     });
   const onChange = (file) => {
     if (!file) {
-      setDataUri("");
+      setDataUri(dataUri);
       return;
     }
 
@@ -51,7 +58,7 @@ function ProfilePage() {
 
   return (
     <>
-      <NavBar />
+    <NavBar />
       <div className={classes.root}>
         <h1>Profile Page</h1>
         <div className={classes.splitScreen}>
@@ -65,7 +72,6 @@ function ProfilePage() {
                   {userSummary.isInEditMode ? (
                     <div>
                       <input
-                        className={classes.inputSummary}
                         type="text"
                         defaultValue={userSummary.text}
                         ref={textDetails}
@@ -88,7 +94,11 @@ function ProfilePage() {
             </div>
           </div>
           {/* Right Side */}
-          <div className={classes.rightPane}>Right</div>
+          <div className={classes.rightPane}>
+            <div className={classes.uploadResume}>
+              <text className={classes.uploadText}>Upload Resume</text>
+            </div>
+          </div>
         </div>
       </div>
     </>

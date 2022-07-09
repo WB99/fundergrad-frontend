@@ -1,14 +1,22 @@
 import React from "react";
 import NavBar from "../Components/Navbar";
+import { useNavigate, useParams } from "react-router-dom";
 import classes from "./StudentPage.module.css";
 import FundStudentCard from "./FundStudentCard";
 import { Button, Form, InputGroup, FormControl } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function StudentPage() {
+    const navigate = useNavigate();
+    const backHandler = () => {
+        navigate("/students");
+      };
     return (
         <>
             <NavBar />
+            <button className={classes.backButton} onClick={backHandler}>
+            🔙 All Students
+             </button>
             <div className={classes.root}>
                 <div className={classes.textblock}>
                     <div className={classes.header}>
@@ -19,9 +27,9 @@ export default function StudentPage() {
                         <div className={classes.details}>
                             <text className={classes.title}>JOEL LIM</text>
                             <text className={classes.subtitle}>Year 2 Computer Science at NTU</text>
-                            <div classname={classes.links}>
-                                <Button href="https://www.linkedin.com/in/joel-lim-jie-en/" variant="link">Linkedin</Button>
-                                <Button href="https://www.youtube.com/watch?v=2xx_2XNxxfA&ab_channel=KCFM" variant="link">Download Resume</Button>
+                            <div>
+                                <a href="https://www.linkedin.com/in/joel-lim-jie-en/" target="_blank">Linkedin</a>
+                                <a href="https://www.youtube.com/watch?v=2xx_2XNxxfA&ab_channel=KCFM" target="_blank">Download Resume</a>
                             </div>
                         </div>
                     </div>

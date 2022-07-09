@@ -1,0 +1,11 @@
+.root{
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.8;
+    background-color: gray;
+    z-index: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;  
+    transform: translate(-50%,-50%);
+}

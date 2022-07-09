@@ -35,19 +35,22 @@
 }
 
 .story {
+    width: 50%;
     display: flex;
     flex-direction: column;
+    margin-right: 30px;
 }
 
 .fundusage {
+    width: 50%;
     display: flex;
     flex-direction: column;
 }
 
-/* .links {
-    padding: 0px;
-    margin-right: 5px;
-} */
+a {
+    display: inline-block;
+    margin-right: 10px;
+}
 
 .profilepic {
     height: 256px;
@@ -72,6 +75,17 @@
 
 .text {
     font-family: Futura;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 200;
+}
+
+.backButton{
+    border: none;
+    cursor: pointer;
+    margin-top: 3rem;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    background-color: white;
+    font-family: "Futura";
+    transition: 0.2s ease-in-out;
 }

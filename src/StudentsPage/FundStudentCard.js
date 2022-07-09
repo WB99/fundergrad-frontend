@@ -1,21 +1,30 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import classes from "./FundStudentCard.module.css";
 import { useNavigate } from "react-router-dom";
 import { Button, Form, InputGroup, FormControl } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import PaymentModal from "../Components/PaymentModal";
+import Overlay from "../Components/Overlay";
+
 
 export default function(props) {
     const student = props.data;
+    const [showPaymentModal, setShowPaymentModal] = useState(false)
+
+    const togglePaymentModal = () => {
+      setShowPaymentModal(!showPaymentModal)
+    }
+
 
     return (
+        <>
         <div className={classes.root}>
             <Form>
                 <h1>💰 Fund Joel!</h1>
                 <Form.Group className={classes.tbc} controlId='amount'>
                     <Form.Label>Amount</Form.Label>
                     <InputGroup className={classes.input}>
-                        <InputGroup.Text>$</InputGroup.Text>
-                        <Form.Control type="number" />
+                        <Form.Control className={classes.formcontrol} type="number" placeholder="SGD"/>
                     </InputGroup>
                 </Form.Group>
 
@@ -26,10 +35,13 @@ export default function(props) {
                     </InputGroup>
                 </Form.Group>
                 
-                <Button className={classes.button} type='submit'>
+                <Button className={classes.button} onClick={togglePaymentModal}>
                     Support Joel
                 </Button>
             </Form>
         </div>
+            {showPaymentModal && <PaymentModal toggle={togglePaymentModal}/>}
+            {showPaymentModal && <Overlay toggle={togglePaymentModal}/>}  
+        </>
     );
 }

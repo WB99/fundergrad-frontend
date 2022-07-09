@@ -1,18 +1,20 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Login from "../Components/Login/Login";
 import NavBar from "../Components/Navbar";
 import Singup from "../Components/Signup/Signup";
 import classes from "./RegistrationPage.module.css"
 
 function RegistrationPage() {
+  const navigate = useNavigate()
   const [login, setLogin] = useState(false)
   function changePage() {
-    setLogin(!login)
+    navigate("/login");
   }
   return (
     <div>
-      <NavBar/>
+      <NavBar />
       <div className={classes.root}>
         <div className={classes.left}>
           <div className={classes.h1}>
