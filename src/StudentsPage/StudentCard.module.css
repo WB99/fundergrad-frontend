@@ -1,7 +1,7 @@
 .root{
     padding: 2rem;
     margin: 1rem;
-    width: 20rem;
+    width: 25rem;
     border-radius: 1rem;
     background-color: #F5F5F5;
     display: flex;
@@ -24,4 +24,29 @@
 .details {
     margin: auto;
     display: flex;
+}
+
+
+.title {
+    font-family: Futura;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-family: Futura;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.progress{
+    width: 20rem;
+}
+
+.text{
+    font-family: Futura;
+    font-size: 14px;
+    font-weight: 50;
+    margin-bottom: 10px
 }

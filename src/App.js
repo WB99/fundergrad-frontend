@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import LandingPage from "./Pages/LandingPage/LandingPage";
 import FundsPage from "./Pages/FundsPage";

@@ -1,23 +1,77 @@
 .root{
     padding: 2rem;
     margin: 1rem;
-    width: 100%;
+    width: 98vw;
     border-radius: 1rem;
-    background-color: #F5F5F5;
+    background-color: #D7EBF3;
     display: flex;
-    flex-direction: column;
-    /* align-items: center; */
+    flex-direction: row;
     -webkit-box-shadow: 0px 7px 13px -2px rgba(0,0,0,0.76); 
     box-shadow: 0px 7px 13px -2px rgba(0,0,0,0.76);
 }
 
+.textblock {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.details {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.body{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+}
+
+.story {
+    display: flex;
+    flex-direction: column;
+}
+
+.fundusage {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .links {
+    padding: 0px;
+    margin-right: 5px;
+} */
+
 .profilepic {
     height: 256px;
     width: 256px;
-    margin: auto;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+    margin-left: 0px;
+    margin-right: 1rem;
     object-fit:cover;
     border-radius:50%;
+}
+
+.title {
+    font-family: Futura;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-family: Futura;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.text {
+    font-family: Futura;
+    font-size: 12px;
+    font-weight: 200;
 }

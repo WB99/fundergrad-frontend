@@ -15,8 +15,7 @@ export default function(props) {
                     <Form.Label>Amount</Form.Label>
                     <InputGroup className={classes.input}>
                         <InputGroup.Text>$</InputGroup.Text>
-                        <FormControl aria-label="Amount (to the nearest dollar)" />
-                        <InputGroup.Text>.00</InputGroup.Text>
+                        <Form.Control type="number" />
                     </InputGroup>
                 </Form.Group>
 
