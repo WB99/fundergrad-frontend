@@ -6,6 +6,7 @@ function StudentsPage() {
     <div>
       <NavBar/>
       <h1>Students Page</h1>
+      <></>
     </div>
 
   );
