@@ -25,7 +25,7 @@ export default function FundPage() {
 
   return (
     <>
-      <NavBar />
+    <NavBar />
       <button className={classes.backButton} onClick={backHandler}>
         🔙 All Funds
       </button>

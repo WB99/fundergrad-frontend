@@ -24,7 +24,7 @@ export default function FundsPage() {
 
   return (
     <>
-    <NavBar/>
+    <NavBar />
     <div className={classes.filter}>
     <input className={classes.input} onChange={toggleCurrentHandler} type="checkbox"/>
     Currently Funding

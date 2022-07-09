@@ -1,10 +1,18 @@
 import "./LandingPage.css"
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import NavBar from "../../Components/Navbar";
 
 function LandingPage() {
+  const navigate = useNavigate();
+
+  const registrationNav= () => {
+    navigate("/registration");
+  };
+
+
   return (
-    <div>
+    <div className="land">
        <NavBar />
       <div className="landing-page">
         <div className="landing-page-holder">
@@ -13,7 +21,7 @@ function LandingPage() {
             <button className="landing-button">
               Log In
             </button>
-            <button className="landing-button signup">
+            <button onClick={registrationNav} className="landing-button sign-up">
               Sign up
             </button>
           </div>
