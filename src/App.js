@@ -12,7 +12,8 @@ import FundsPage from "./Pages/FundsPage";
 import FundPage from "./Pages/FundPage";
 import ProfilePage from "./Pages/ProfilePage";
 import RegistrationPage from "./Pages/RegistrationPage";
-import StudentsPage from "./Pages/StudentsPage";
+import StudentsPage from "./StudentsPage/StudentsPage";
+import StudentPage from "./StudentsPage/StudentPage"
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route exact path="/landing" element={<LandingPage />} />
         <Route exact path="/students" element={<StudentsPage />}/>
+        <Route exact path="/students/:id" element={<StudentPage />}/>
         <Route exact path="/funds" element={<FundsPage />}/>
         <Route exact path="/funds/:id" element={<FundPage />}/>
         <Route exact path="/profile" element={<ProfilePage />}/>
