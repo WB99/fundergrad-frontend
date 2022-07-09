@@ -19,7 +19,6 @@ export default function NavBar() {
     navigate("/profile");
   };
 
-
   return (
     <div className="navbar">
       <div className="navbar-title">F 'undergrad</div>
