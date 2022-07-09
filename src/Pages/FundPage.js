@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import NavBar from "../Components/Navbar";
 import classes from "./FundPage.module.css";
 import { useNavigate } from "react-router-dom";
-
+import { Navbar } from "react-bootstrap";
 export default function FundPage() {
 
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ export default function FundPage() {
 
   return (
     <>
-      <NavBar />
+    <NavBar />
       <button className={classes.backButton} onClick={backHandler}>
         🔙 All Funds
       </button>

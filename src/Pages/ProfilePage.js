@@ -58,7 +58,7 @@ function ProfilePage() {
 
   return (
     <>
-      <NavBar />
+    <NavBar />
       <div className={classes.root}>
         <h1>Profile Page</h1>
         <div className={classes.splitScreen}>

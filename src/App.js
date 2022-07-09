@@ -12,7 +12,10 @@ import FundPage from "./Pages/FundPage";
 import ProfilePage from "./Pages/ProfilePage";
 import RegistrationPage from "./Pages/RegistrationPage";
 import StudentsPage from "./StudentsPage/StudentsPage";
-import StudentPage from "./StudentsPage/StudentPage";
+import StudentPage from "./StudentsPage/StudentPage"
+import LoginPage from "./Pages/LoginPage";
+import { Navbar } from "react-bootstrap";
+import NavBar from "./Components/Navbar";
 
 export const FundsContext = createContext();
 export const UsersContext = createContext();
@@ -83,6 +86,7 @@ function App() {
     },
   ];
   return (
+    <>
     <FundsContext.Provider value={funds}>
     <UsersContext.Provider value={["here", "there"]}>
       <Router>
@@ -93,12 +97,14 @@ function App() {
           <Route exact path="/funds" element={<FundsPage />} />
           <Route exact path="/funds/:id" element={<FundPage />} />
           <Route exact path="/profile" element={<ProfilePage />} />
+          <Route exact path="/login" element={<LoginPage />}/>
           <Route exact path="/registration" element={<RegistrationPage />} />
           <Route path="/*" element={<Navigate to="/landing" />} />
         </Routes>
       </Router>
     </UsersContext.Provider>
     </FundsContext.Provider>
+    </>
   );
 }
 
