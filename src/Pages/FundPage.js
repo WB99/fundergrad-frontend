@@ -57,7 +57,7 @@ export default function FundPage() {
           </div>
           <div className={classes.fundingCard}>
             <h2>Contribute</h2>
-            <h3>Amount:</h3>
+            Amount:
             <input placeholder="SGD" className={classes.input} />
             <button className={classes.button}>Contribute!</button>
           </div>

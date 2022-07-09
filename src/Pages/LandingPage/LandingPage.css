@@ -19,6 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .quote{
@@ -27,6 +28,7 @@
     background: linear-gradient(90deg, #a1d3f7 0%, white 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
 }
 
 .button-holder-landing{

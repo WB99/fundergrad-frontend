@@ -25,11 +25,11 @@ export default function NavBar() {
 
   return (
     <div className="navbar">
-      <div className="navbar-title" onClick={landingHandler}>F ' Undergrad</div>
+      <a className="navbar-title" onClick={landingHandler}>F 'undergrad</a>
       <div className="button-holder">
         <div className="button" onClick={studentsHandler}>Fund a student</div>
         <div className="button" onClick={fundsHandler}>Funds</div>
-        <div className="button" onClick={profileHandler}>My profile</div>
+        <div className="button" onClick={profileHandler}>Profile</div>
       </div>
     </div>
   );
