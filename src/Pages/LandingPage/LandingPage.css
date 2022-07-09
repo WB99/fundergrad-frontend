@@ -1,10 +1,14 @@
 .landing-page{
-    height: 100vh;
+    height: calc(100vh - 64px);
     padding: 0px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;;
 }
 
 .landing-page-holder{
-    width: 100%;
+    font-family: 'Lobster', cursive;
+    width: 103%;
     overflow: hidden;
     height: 80%;
     background-image: url("../../Assets/hands.png");
@@ -20,6 +24,9 @@
 .quote{
     font-size: 100px;
     color: white;
+    background: linear-gradient(90deg, #a1d3f7 0%, white 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .button-holder-landing{
@@ -33,12 +40,46 @@
     height: 56px;
     width: 200px;
     border-radius: 100px;
-    border: 1px solid #3887b9;
+    font-size: 28px;
+    font-weight: bold;
     background-color: white;
-    font-size: 26px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.landing-button:hover{
+    animation: hoverbutton 3s infinite;
 }
 
 .landing-button.signup{
     background-color: #3887b9;
     color: white;
+}
+
+.landing-button.signup:hover{
+    animation: hoverbutton2 3s infinite;
+}
+
+@keyframes hoverbutton{
+    0%{
+        color: black
+    }
+    50%{
+        color: #3887b9;
+    }
+    100%{
+        color: black;
+    }
+}
+
+@keyframes hoverbutton2{
+    0%{
+        color: white
+    }
+    50%{
+        color: #d7ebf3;
+    }
+    100%{
+        color: white;
+    }
 }
