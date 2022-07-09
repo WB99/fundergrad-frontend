@@ -47,7 +47,7 @@ function ProfilePage() {
     });
   const onChange = (file) => {
     if (!file) {
-      setDataUri("");
+      setDataUri(dataUri);
       return;
     }
 
@@ -94,7 +94,11 @@ function ProfilePage() {
             </div>
           </div>
           {/* Right Side */}
-          <div className={classes.rightPane}>Right</div>
+          <div className={classes.rightPane}>
+            <div className={classes.uploadResume}>
+              <text className={classes.uploadText}>Upload Resume</text>
+            </div>
+          </div>
         </div>
       </div>
     </>
