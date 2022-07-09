@@ -13,6 +13,9 @@
 .navbar-title{
     font-size: 32px;
     font-weight: bold;
+    background: linear-gradient(90deg, #3887B9 9.72%, #000000 109.28%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .button-holder{

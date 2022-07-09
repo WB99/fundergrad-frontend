@@ -20,10 +20,13 @@ export default function NavBar() {
     navigate("/profile");
   };
 
+  const landingHandler = () => {
+    navigate("/");
+  };
 
   return (
     <div className="navbar">
-      <div className="navbar-title">F'Undergrad</div>
+      <div className="navbar-title" onClick={landingHandler}>F'Undergrad</div>
       <div className="button-holder">
         <div className="button" onClick={studentsHandler}>Fund a student</div>
         <div className="button" onClick={fundsHandler}>General fund</div>
