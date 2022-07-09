@@ -13,7 +13,7 @@ function LandingPage() {
 
   return (
     <div className="land">
-       <NavBar />
+      <h1>F'Undergrad</h1>
       <div className="landing-page">
         <div className="landing-page-holder">
           <div className="quote"> Empowering Students</div>

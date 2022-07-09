@@ -28,6 +28,9 @@ form input{
     background: #3887B9;
     color: white;
     font-size: 20px;
+    width: 18rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 .select{
@@ -61,4 +64,5 @@ form input{
 
 .matchy{
     color: red;
+    text-align: center;
 }

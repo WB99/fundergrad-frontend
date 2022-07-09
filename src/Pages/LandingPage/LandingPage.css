@@ -1,5 +1,22 @@
 .land{
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.land h1{
+    background: linear-gradient(90deg, #3887B9 9.72%, #000000 109.28%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    border-bottom: 1px solid lightgray;
+    box-shadow: 1px 2px lightgray;
 }
 
 .landing-page{
@@ -11,7 +28,7 @@
 
 .landing-page-holder{
     font-family: 'Lobster', cursive;
-    width: 103%;
+    width: 100vw;
     height: 80%;
     background-image: url("../../Assets/hands.png");
     background-repeat: no-repeat;
