@@ -19,16 +19,21 @@ export default function FundPage() {
   };
   
   const fundID = parseInt(useParams().id);
-  
+  const arrayData = useContext(FundsContext)
   let data = useContext(FundsContext);
   data=data.filter((fund) => fund.fundID === fundID)[0]
-
+  const test = () => {
+    // console.log(typeof(data))
+    arrayData.push({test: "test"})
+    navigate('/funds')
+  }
   return (
     <>
     <NavBar />
       <button className={classes.backButton} onClick={backHandler}>
         🔙 All Funds
       </button>
+      <button onClick={test}>test</button>
       <div className={classes.root}>
         <div className={classes.top}>
           <div className={classes.topLeft}>

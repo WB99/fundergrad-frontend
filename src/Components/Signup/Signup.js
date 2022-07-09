@@ -34,18 +34,15 @@ function Signup({ changePage }) {
     // matchHandle();
     console.log(name);
   }
-  function setSignupContext(e) {
-    e.preventDefault();
-    userDetails = { name: name, email: email, password: password, role: role };
-    console.log(userDetails);
-    navigate("/profile");
-  }
+  // function setSignupContext(e) {
+  //   e.preventDefault();
+  //   console.log(userDetails);
+  //   userDetails = { name: name, email: email, password: password, role: role };
+  //   navigate("/profile");
+  // }
 
   useEffect(() => {
     matchHandle();
-  }, [passwordConfirm]);
-
-  useEffect(() => {
     if (
       name != "" &&
       email != "" &&
@@ -57,6 +54,20 @@ function Signup({ changePage }) {
       setFormFilled(false);
     }
   }, [passwordConfirm, name, email, password]);
+  // const [passwordError, setPasswordError] = useState(false)
+  // const passwordChecker = () => {
+  //   if (password.length > 9){
+  //     setPasswordError(false)
+  //   }
+  // }
+  const submitHandler = (e) => {
+    e.preventDefault()
+    const userInfo = JSON.stringify({ name: name, email: email, password: password, role: role });
+    // console.log(useri)
+    localStorage.setItem("user", userInfo)
+    navigate("/profile");
+
+  }
   return (
     <form className="signup">
       <div className="create-account">Create an account</div>
@@ -87,7 +98,7 @@ function Signup({ changePage }) {
         onChange={handlePasswordConfirm}
       ></input>
       {match ? null : <div className="matchy">Passwords do not match</div>}
-      {formFilled ? (
+      {/* {formFilled ? (
         <button className="submit" onClick={setSignupContext}>
           Create Account
         </button>
@@ -101,7 +112,8 @@ function Signup({ changePage }) {
         >
           Create Account
         </button>
-      )}
+      )} */}
+      <button className="submit" disabled={!formFilled} onClick={submitHandler} >Create Account</button>
       {formFilled == false && submitCount > 0 ? (
         <div className="matchy">
           Please ensure a name, email and password of more than length 8 is
