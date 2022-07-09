@@ -14,7 +14,7 @@ function LoginPage() {
   }
   return (
     <div>
-      <NavBar/>
+    <NavBar />
       <div className={classes.root}>
         <div className={classes.left}>
           <div className={classes.h1}>

@@ -12,7 +12,7 @@ function LandingPage() {
 
 
   return (
-    <div>
+    <div className="land">
        <NavBar />
       <div className="landing-page">
         <div className="landing-page-holder">

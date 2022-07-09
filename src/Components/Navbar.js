@@ -4,6 +4,7 @@ import "./Navbar.css"
 import { useNavigate } from "react-router-dom";
 
 export default function NavBar() {
+
   const navigate = useNavigate();
 
 
@@ -24,7 +25,7 @@ export default function NavBar() {
   };
 
   return (
-    <div className="navbar">
+    <div className="navbar" id="navbar">
       <a className="navbar-title" onClick={landingHandler}>F 'undergrad</a>
       <div className="button-holder">
         <div className="button" onClick={studentsHandler}>Fund a student</div>

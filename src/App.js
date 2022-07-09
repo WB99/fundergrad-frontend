@@ -14,7 +14,8 @@ import RegistrationPage from "./Pages/RegistrationPage";
 import StudentsPage from "./StudentsPage/StudentsPage";
 import StudentPage from "./StudentsPage/StudentPage"
 import LoginPage from "./Pages/LoginPage";
-import StudentPage from "./StudentsPage/StudentPage";
+import { Navbar } from "react-bootstrap";
+import NavBar from "./Components/Navbar";
 
 export const FundsContext = createContext();
 export const UsersContext = createContext();
@@ -85,6 +86,7 @@ function App() {
     },
   ];
   return (
+    <>
     <FundsContext.Provider value={funds}>
     <UsersContext.Provider value={["here", "there"]}>
       <Router>
@@ -102,6 +104,7 @@ function App() {
       </Router>
     </UsersContext.Provider>
     </FundsContext.Provider>
+    </>
   );
 }
 
