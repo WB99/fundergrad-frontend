@@ -1,13 +1,13 @@
 import React from "react";
 import NavBar from "../Components/Navbar";
 
-function LandingPage() {
+function FundsPage() {
   return (
     <div>
       <NavBar/>
-      <h1>Landing Page</h1>
+      <h1>Funds Page</h1>
     </div>
 
   );
 }
-export default LandingPage;
+export default FundsPage;
