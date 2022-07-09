@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Navbar.css"
 
 import { useNavigate } from "react-router-dom";
@@ -28,7 +28,7 @@ export default function NavBar() {
       <div className="navbar-title" onClick={landingHandler}>F'Undergrad</div>
       <div className="button-holder">
         <div className="button" onClick={studentsHandler}>Fund a student</div>
-        <div className="button" onClick={fundsHandler}>General fund</div>
+        <div className="button" onClick={fundsHandler}>Funds</div>
         <div className="button" onClick={profileHandler}>My profile</div>
       </div>
     </div>
