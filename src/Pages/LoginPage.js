@@ -6,11 +6,11 @@ import NavBar from "../Components/Navbar";
 import Singup from "../Components/Signup/Signup";
 import classes from "./RegistrationPage.module.css"
 
-function RegistrationPage() {
-  const navigate = useNavigate()
+function LoginPage() {
   const [login, setLogin] = useState(false)
+  const navigate = useNavigate()
   function changePage() {
-    navigate("/login");
+    navigate("/registration");
   }
   return (
     <div>
@@ -25,7 +25,7 @@ function RegistrationPage() {
           </div>
         </div>
         <div id="right">
-          { login === false ? <Singup changePage={changePage} /> : <Login changePage={changePage}/> }
+            <Login changePage={changePage}/>
         </div>
 
       </div>
@@ -33,4 +33,4 @@ function RegistrationPage() {
 
   );
 }
-export default RegistrationPage;
+export default LoginPage;

@@ -24,10 +24,7 @@
 
 .quote{
     font-size: 100px;
-    color: white;
-    background: linear-gradient(90deg, #a1d3f7 0%, white 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #1c394a;
 
 }
 
@@ -53,12 +50,12 @@
     animation: hoverbutton 3s infinite;
 }
 
-.landing-button.signup{
+.landing-button.sign-up{
     background-color: #3887b9;
     color: white;
 }
 
-.landing-button.signup:hover{
+.landing-button.sign-up:hover{
     animation: hoverbutton2 3s infinite;
 }
 
