@@ -14,14 +14,13 @@ export default function(props) {
   return (
     <div className={classes.root}>
       <h1>{fund.fundName}</h1>
-      <div>Round {fund.round}</div>
-      <div>Current Funds: ${fund.currentFunds}</div>
-      <div>Funding Ends on: {fund.fundingExpiration}</div>
-      <div>Number of Spaces: {fund.availableSlots}</div>
-      <p>
+      <div className={classes.info}>Current Funds: ${fund.currentFunds}</div>
+      <div className={classes.info}>{fund.registration ? 'Funding Ends on:' : 'Registration Ends on'} {fund.fundingExpiration}</div>
+      <div className={classes.info}>Slots Available: {fund.availableSlots}</div>
+      <p className={classes.desc}>
         {fund.fundDesc}
       </p>
-      <button onClick={goToIndivFund} >Register</button>
+      <button className={classes.button} onClick={goToIndivFund}>{fund.registration ? 'Fund' : 'Register'}</button>
     </div>
   );
 }

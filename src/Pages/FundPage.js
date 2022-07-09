@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import NavBar from "../Components/Navbar";
 import classes from "./FundPage.module.css";
 import { useNavigate } from "react-router-dom";
 
 export default function FundPage() {
+
   const navigate = useNavigate();
 
   const backHandler = () => {
