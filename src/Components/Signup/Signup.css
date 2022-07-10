@@ -6,6 +6,7 @@
     flex-direction: column;
     align-items: center;
     padding: 20px 10px;
+    font-family: 'Futura';
 }
 
 .create-account{
@@ -65,4 +66,17 @@ form input{
 .matchy{
     color: red;
     text-align: center;
+}
+.eye{
+    z-index: 3;
+    position: absolute;
+    margin-top: 20px;
+    right: 150px;
+    cursor: pointer;
+}
+.inputContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 18rem;
 }
