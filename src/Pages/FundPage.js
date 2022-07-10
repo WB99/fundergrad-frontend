@@ -8,32 +8,36 @@ import Overlay from "../Components/Overlay";
 
 export default function FundPage() {
   const navigate = useNavigate();
-  const [showPaymentModal, setShowPaymentModal] = useState(false)
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
 
   const togglePaymentModal = () => {
-    setShowPaymentModal(!showPaymentModal)
-  }
+    setShowPaymentModal(!showPaymentModal);
+  };
 
   const backHandler = () => {
     navigate("/funds");
   };
-  
+
   const fundID = parseInt(useParams().id);
-  const arrayData = useContext(FundsContext)
+  const arrayData = useContext(FundsContext);
   let data = useContext(FundsContext);
-  data=data.filter((fund) => fund.fundID === fundID)[0]
+  data = data.filter((fund) => fund.fundID === fundID)[0];
   const test = () => {
     // console.log(typeof(data))
-    arrayData.push({test: "test"})
-    navigate('/funds')
+    arrayData.push({ test: "test" });
+    navigate("/funds");
+  };
+
+  const registerHandler = () => {
+    navigate("/funds");
   }
   return (
     <>
-    <NavBar />
+      <NavBar />
       <button className={classes.backButton} onClick={backHandler}>
         🔙 All Funds
       </button>
-      <button onClick={test}>test</button>
+      {/* <button onClick={test}>test</button> */}
       <div className={classes.root}>
         <div className={classes.top}>
           <div className={classes.topLeft}>
@@ -45,7 +49,16 @@ export default function FundPage() {
             <p>Current Funding</p>
             <h1>${data.currentFunds}</h1>
             <p>Funding Ends In</p>
+            {data.registration && <p>Registration Ends In</p>}
             <h1>1 d 5 hr 10 min</h1>
+            {data.registration && (
+              <div>
+                <p>Slots Remaining</p>
+                <h1>
+                  {data.totalSlots}/{data.availableSlots}
+                </h1>
+              </div>
+            )}
           </div>
         </div>
 
@@ -62,17 +75,20 @@ export default function FundPage() {
               <li key={funder}>{funder}</li>
             ))}
           </div>
-          <div className={classes.fundingCard}>
+          {!data.registration && <div className={classes.fundingCard}>
             <h2>Contribute</h2>
             Amount:
-            <input type='number' placeholder="SGD" className={classes.input} />
-            <button className={classes.button} onClick={togglePaymentModal}>Contribute!</button>
-          </div>
+            <input type="number" placeholder="SGD" className={classes.input} />
+            <button className={classes.button} onClick={togglePaymentModal}>
+              Contribute!
+            </button>
+          </div>}
+          {data.registration && <button className={classes.registerButton} onClick={registerHandler}>Register!</button>}
         </div>
       </div>
 
-      {showPaymentModal && <PaymentModal toggle={togglePaymentModal}/>}
-      {showPaymentModal && <Overlay toggle={togglePaymentModal}/>}
+      {showPaymentModal && <PaymentModal toggle={togglePaymentModal} />}
+      {showPaymentModal && <Overlay toggle={togglePaymentModal} />}
     </>
   );
 }

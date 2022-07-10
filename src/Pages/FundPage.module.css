@@ -57,3 +57,15 @@
     font-family: "Futura";
     transition: 0.2s ease-in-out;
 }
+.registerButton{
+    border-radius: 1rem;
+    border: none;
+    background-color: #d7ebf3;
+    font-family: 'Lobster';
+    font-size: 2rem;
+    padding: 0rem 3rem 0rem 3rem;
+    transition: 0.2s ease-in-out;
+}
+.registerButton:hover{
+    background-color: #a1d3f7;
+}
