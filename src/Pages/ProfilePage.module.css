@@ -62,5 +62,14 @@
     margin-bottom: 3rem;
 }
 
+.profileText{
+    display: flex;
+    flex-direction: row;
+}
 
 
+.thankYouText{
+    display: flex;
+    margin-top: 10rem;
+    text-align: center;
+}

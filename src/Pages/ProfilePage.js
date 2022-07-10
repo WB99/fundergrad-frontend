@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import NavBar from "../Components/Navbar";
 import classes from "./ProfilePage.module.css";
 import user from "../Assets/user.png";
-import { SignupContext } from "../App";
 
 import ProfileForm from "../Components/ProfileForm";
 
@@ -10,6 +9,8 @@ function ProfilePage() {
   const [dataUri, setDataUri] = useState(user);
   const [userDetails, setUserDetails] = useState({});
   const textDetails = useRef();
+  const [role, setRole] = useState();
+
   useEffect(() => {
     setUserDetails(JSON.parse(localStorage.getItem("user")));
     console.log(userDetails);
@@ -20,27 +21,47 @@ function ProfilePage() {
     text: "Click To Edit User Summary",
     isInEditMode: false,
   });
-
   const changeEditMode = () => {
     console.log("edit mode");
     setUserSummary({
-      text: userSummary.value,
-      isInEditMode: !userSummary.isInEditMode,
+      ...userSummary,
+      isInEditMode: true,
     });
   };
 
-  const updateTextValue = () => {
-    const text = textDetails.current.value;
+  const updateTextValue = (e) => {
+    let text = textDetails.current.value;
     if (text == "") {
       setUserSummary({
         text: "Click To Edit User Summary",
         isInEditMode: false,
       });
+      e.preventDefault();
+      setUserDetails({
+        ...userDetails,
+        summary: "Click To Edit User Summary",
+        profilePicUri: dataUri,
+      });
+      console.log(userSummary);
+      const userInfo = JSON.stringify(userDetails);
+      localStorage.setItem("user", userInfo);
+      console.log(localStorage.getItem("user"));
     } else {
       setUserSummary({
         text: text,
         isInEditMode: false,
       });
+      e.preventDefault();
+      // here
+      console.log(userSummary);
+      setUserDetails({
+        ...userDetails,
+        summary: userSummary.text,
+        profilePicUri: dataUri,
+      });
+      const userInfo = JSON.stringify(userDetails);
+      localStorage.setItem("user", userInfo);
+      console.log(localStorage.getItem("user"));
     }
   };
 
@@ -52,6 +73,7 @@ function ProfilePage() {
       };
       reader.readAsDataURL(file);
     });
+
   const onChange = (file) => {
     if (!file) {
       setDataUri(dataUri);
@@ -77,8 +99,8 @@ function ProfilePage() {
                 <div className={classes.profileSummary}>
                   <h1>{userDetails.name}</h1>
                   {userSummary.isInEditMode ? (
-                    <div>
-                      <input
+                    <div className={classes.profileText}>
+                      <textarea
                         type="text"
                         defaultValue={userSummary.text}
                         ref={textDetails}
@@ -96,15 +118,24 @@ function ProfilePage() {
                 onChange={(event) => onChange(event.target.files[0] || null)}
               />
             </div>
-
-            <div className={classes.uploadResume}>
+            {/* <div className={classes.uploadResume}>
               <span className={classes.uploadText}>Upload Resume</span>
-            </div>
+            </div> */}
           </div>
           {/* Right Side */}
-          <div className={classes.rightPane}>
-            <ProfileForm />
-          </div>
+          {userDetails.role == "student" ? (
+            <div className={classes.rightPane}>
+              <ProfileForm />
+            </div>
+          ) : (
+            <div className={classes.rightPane}>
+              <span className={classes.thankYouText}>
+                Thank you for contributing to F'Undergrad. You donations could
+                further the educational needs of countless needy students with
+                physical disabilities who have displayed scholastic aptitude.
+              </span>
+            </div>
+          )}
         </div>
       </div>
     </>

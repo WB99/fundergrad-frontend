@@ -25,6 +25,12 @@ function ProfileForm() {
     setSaved(false);
   };
 
+  const [resumeUrl, setresumeUrl] = useState("");
+  const resumeUrlInputHandler = (event) => {
+    setresumeUrl(event.target.value);
+    setSaved(false);
+  };
+
   const [linkedIn, setlinkedIn] = useState("");
   const linkedInInputHandler = (event) => {
     setlinkedIn(event.target.value);
@@ -41,7 +47,7 @@ function ProfileForm() {
 
   const sumbitHandler = (e) => {
     e.preventDefault();
-    console.log(userDetails);
+    console.log("USER DETAILSS>>", userDetails);
     setUserDetails({
       ...userDetails,
       school: school,
@@ -69,6 +75,9 @@ function ProfileForm() {
 
         <text className={classes.label}>LinkedIn :</text>
         <input className={classes.input} onChange={linkedInInputHandler} />
+
+        <text className={classes.label}>Link to Resume :</text>
+        <input className={classes.input} onChange={resumeUrlInputHandler} />
 
         <text className={classes.label}>Fund Raising Target :</text>
         <input className={classes.input} onChange={fundTargetInputHandler} />
