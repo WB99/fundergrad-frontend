@@ -113,8 +113,12 @@ function App() {
       name : "Ivan Teo Meng Ern",
       email : "teoboy@gmail.com",
       password : "123456789",
-      LI: "linkedin.com/chukang",
+      School: "NUS",
+      degree: "Business",
+      year: "Graduated",
+      LI: "linkedin.com/meng",
       profilepic: {},
+      resume: {},
       role: "donor"
     }
   ]

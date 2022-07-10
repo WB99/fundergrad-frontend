@@ -71,6 +71,12 @@ function Signup({ changePage }) {
       email: email,
       password: password,
       role: role,
+      School: "",
+      degree: "",
+      year: "",
+      LI: "",
+      profilepic: {},
+      resume: {},
     });
     localStorage.setItem("user", userInfo);
     navigate("/profile");
