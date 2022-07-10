@@ -9,6 +9,8 @@ function ProfilePage() {
   const [dataUri, setDataUri] = useState(user);
   const [userDetails, setUserDetails] = useState({});
   const textDetails = useRef();
+  const [role, setRole] = useState();
+
   useEffect(() => {
     setUserDetails(JSON.parse(localStorage.getItem("user")));
     console.log(userDetails);
@@ -121,9 +123,19 @@ function ProfilePage() {
             </div> */}
           </div>
           {/* Right Side */}
-          <div className={classes.rightPane}>
-            <ProfileForm />
-          </div>
+          {userDetails.role == "student" ? (
+            <div className={classes.rightPane}>
+              <ProfileForm />
+            </div>
+          ) : (
+            <div className={classes.rightPane}>
+              <span className={classes.thankYouText}>
+                Thank you for contributing to F'Undergrad. You donations could
+                further the educational needs of countless needy students with
+                physical disabilities who have displayed scholastic aptitude.
+              </span>
+            </div>
+          )}
         </div>
       </div>
     </>
