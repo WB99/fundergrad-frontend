@@ -109,7 +109,7 @@ function App() {
       year: 1,
       LI: "linkedin.com/chukang",
       profilepic: joel,
-      resume: {"https://drive.google.com/file/d/1zUpmTruNMvEH03cLHr9pN1VWG1JxLXP_/view?usp=sharing"},
+      resume: "https://drive.google.com/file/d/1zUpmTruNMvEH03cLHr9pN1VWG1JxLXP_/view?usp=sharing",
       role: "student"
     },
     {
@@ -121,7 +121,7 @@ function App() {
       year: "Graduated",
       LI: "linkedin.com/meng",
       profilepic: joel,
-      resume: {"https://drive.google.com/file/d/1zUpmTruNMvEH03cLHr9pN1VWG1JxLXP_/view?usp=sharing"},
+      resume: "https://drive.google.com/file/d/1zUpmTruNMvEH03cLHr9pN1VWG1JxLXP_/view?usp=sharing",
       role: "donor"
     }
   ]

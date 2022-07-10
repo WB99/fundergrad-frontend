@@ -16,10 +16,10 @@ function StudentsPage() {
         var userObject = {
             studentID: 0,
             name: user.name,
-            profilepic:
-                "https://media-exp2.licdn.com/dms/image/C5603AQF0ecH6FuAy4A/profile-displayphoto-shrink_800_800/0/1641983069059?e=1662595200&v=beta&t=TFzy69HF5PuzjXTrFxqspf8K4qX72F07UbTaD6d3yxM",
+            profilepic: user.profilePicUri,
             course: "Year " + user.yos + " " + user.degree + " at " + user.school,
             description: user.desc,
+            fundusage: user.fundusage,
             amountRaised: "0",
             goal: user.fundTarget,
             progress: 0,
