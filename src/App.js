@@ -130,7 +130,7 @@ function App() {
       degree: "Computer Science",
       year: 1,
       LI: "linkedin.com/chukang",
-      profilepic: joel,
+      profilePicUri: joel,
       resume:
         "https://drive.google.com/file/d/1zUpmTruNMvEH03cLHr9pN1VWG1JxLXP_/view?usp=sharing",
       role: "student",
@@ -143,7 +143,7 @@ function App() {
       degree: "Business",
       year: "Graduated",
       LI: "linkedin.com/meng",
-      profilepic: joel,
+      profilePicUri: joel,
       resume:
         "https://drive.google.com/file/d/1zUpmTruNMvEH03cLHr9pN1VWG1JxLXP_/view?usp=sharing",
       role: "donor",
