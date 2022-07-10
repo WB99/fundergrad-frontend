@@ -9,7 +9,7 @@ function Login({changePage}) {
     const navigate = useNavigate()
     let profiles = useContext(ProfilesContext)
     let signup = useContext(SignupContext)
-    var curprof = {}
+    const [curprof, setCurprof] = useState({})
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [validProfile, setValidProfile] = useState(false)
@@ -24,16 +24,19 @@ function Login({changePage}) {
         setValidProfile(false)
         for(let i = 0; i < profiles.length; i++ ){
             console.log(profiles[i])
-            if (profiles[i].email == email && profiles[i].password == password){
-                curprof = profiles[i]
+            if (profiles[i].email === email && profiles[i].password === password){
+                setCurprof(profiles[i])
                 setValidProfile(true)
 
             }
-        }
+        }  
+        console.log(curprof)
     }
     function setLoginContext(e){
         e.preventDefault()
-        signup = curprof
+        const userInfo = JSON.stringify(curprof);
+        console.log(userInfo)
+        localStorage.setItem("user", userInfo);
         navigate("/profile")
     }
     useEffect(

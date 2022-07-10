@@ -9,6 +9,9 @@ function LandingPage() {
   const registrationNav= () => {
     navigate("/registration");
   };
+  const loginNav= () => {
+    navigate("/login");
+  };
 
 
   return (
@@ -18,7 +21,7 @@ function LandingPage() {
         <div className="landing-page-holder">
           <div className="quote"> Empowering Students</div>
           <div className="button-holder-landing">
-            <button className="landing-button">
+            <button className="landing-button" onClick={loginNav}>
               Log In
             </button>
             <button onClick={registrationNav} className="landing-button sign-up">
