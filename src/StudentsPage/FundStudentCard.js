@@ -20,7 +20,7 @@ export default function(props) {
         <>
         <div className={classes.root}>
             <Form>
-                <h1>💰 Fund Joel!</h1>
+                <h1>💰 Fund {student.firstname}!</h1>
                 <Form.Group className={classes.tbc} controlId='amount'>
                     <Form.Label>Amount</Form.Label>
                     <InputGroup className={classes.input}>
@@ -29,14 +29,14 @@ export default function(props) {
                 </Form.Group>
 
                 <Form.Group className={classes.tbc} controlId='message'>
-                    <Form.Label>Send Joel a Message</Form.Label>
+                    <Form.Label>Send {student.firstname} a Message</Form.Label>
                     <InputGroup className={classes.input}>
                         <Form.Control as='textarea' rows={3} />
                     </InputGroup>
                 </Form.Group>
                 
                 <Button className={classes.button} onClick={togglePaymentModal}>
-                    Support Joel
+                    Support {student.firstname}!
                 </Button>
             </Form>
         </div>

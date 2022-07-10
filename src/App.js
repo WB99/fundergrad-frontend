@@ -22,6 +22,8 @@ export const FundsContext = createContext();
 export const UsersContext = createContext();
 export const SignupContext = createContext();
 export const ProfilesContext = createContext();
+export const StudentsContext = createContext();
+
 
 function App() {
   const funds = [
@@ -118,11 +120,53 @@ function App() {
       role: "donor"
     }
   ]
+  const students = [
+    {
+      studentID: 1,
+      name: "Joel Lim",
+      firstname: "Joel",
+      profilepic: "https://media-exp2.licdn.com/dms/image/C5603AQF0ecH6FuAy4A/profile-displayphoto-shrink_800_800/0/1641983069059?e=1662595200&v=beta&t=TFzy69HF5PuzjXTrFxqspf8K4qX72F07UbTaD6d3yxM",
+      course: "Year 2 Computer Science at NTU",
+      description: "I am passionate about computing and I seek to make a difference when I enter the workforce and contribute to society. Your donation means a lot to me and motivates me to study hard and achieve my goals. Thank you for your kindness!",
+      fundusage: "I will use these funds to cover the school fees for my remaining 2 years (4 semesters). The excess will be used to cover my hostel fees and other miscellaneous fees. This will greatly alleviate my student debt!",      
+      amountRaised: "12,000",
+      goal: "20,000",
+      progress: 60,
+      linkedin: "https://www.linkedin.com/in/joel-lim-jie-en/"
+    },
+    {
+      studentID: 2,
+      name: "Ivan Teo",
+      firstname: "Ivan",
+      profilepic: "https://media-exp2.licdn.com/dms/image/C4E03AQHAkmwdbb6ybQ/profile-displayphoto-shrink_800_800/0/1625796668991?e=1662595200&v=beta&t=H0UhDd-jpkSyDY458pVEkY9pONdbbvDirXFQsfkhBBc",
+      course: "Year 2 Computer Science at NTU",
+      description: "I am passionate about computing and I seek to make a difference when I enter the workforce and contribute to society. Your donation means a lot to me and motivates me to study hard and achieve my goals. Thank you for your kindness!",
+      fundusage: "I will use these funds to cover the school fees for my remaining 2 years (4 semesters). The excess will be used to cover my hostel fees and other miscellaneous fees. This will greatly alleviate my student debt!",
+      amountRaised: "18,000",
+      goal: "60,000",
+      progress: 30,
+      linkedin: "https://www.linkedin.com/in/ivanteozhiming/"
+    },
+    {
+      studentID: 3,
+      name: "Keane Kwa",
+      firstname: "Keane",
+      profilepic: "https://media-exp2.licdn.com/dms/image/C4D03AQHpl_8yMQ_vGQ/profile-displayphoto-shrink_800_800/0/1653201141694?e=1662595200&v=beta&t=qMEtfuz3FRKRLUgieNGH56EhUEpP_EgfKXKiPU1eaTc",
+      course: "Year 2 Computer Science at NTU",
+      description: "I am passionate about computing and I seek to make a difference when I enter the workforce and contribute to society. Your donation means a lot to me and motivates me to study hard and achieve my goals. Thank you for your kindness!",
+      fundusage: "I will use these funds to cover the school fees for my remaining 2 years (4 semesters). The excess will be used to cover my hostel fees and other miscellaneous fees. This will greatly alleviate my student debt!",
+      amountRaised: "40,000",
+      goal: "50,000",
+      progress: 80,
+      linkedin: "https://www.linkedin.com/in/keane-kwa/"
+    }
+  ]
   return (
     <>
     <FundsContext.Provider value={funds}>
     <UsersContext.Provider value={["here", "there"]}>
     <SignupContext.Provider value={{}} >
+    <StudentsContext.Provider value={students} >
     <ProfilesContext.Provider value={profiles} >
       <Router>
         <Routes>
@@ -138,6 +182,7 @@ function App() {
         </Routes>
       </Router>
     </ProfilesContext.Provider>
+    </StudentsContext.Provider>
     </SignupContext.Provider>
     </UsersContext.Provider>
     </FundsContext.Provider>
