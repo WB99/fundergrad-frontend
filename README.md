@@ -1,6 +1,6 @@
-#Welcome to F'Undergrad
+# Welcome to F'Undergrad
 
-#To start, clone the repo, cd the repo and run
+# To start, clone the repo, cd the repo and run
 
 ```
 yarn
