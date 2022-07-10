@@ -75,7 +75,7 @@ export default function FundPage() {
               <li key={funder}>{funder}</li>
             ))}
           </div>
-          {!data.registration && <div className={classes.fundingCard}>
+          {data.registration && <div className={classes.fundingCard}>
             <h2>Contribute</h2>
             Amount:
             <input type="number" placeholder="SGD" className={classes.input} />
@@ -83,7 +83,7 @@ export default function FundPage() {
               Contribute!
             </button>
           </div>}
-          {data.registration && <button className={classes.registerButton} onClick={registerHandler}>Register!</button>}
+          {!data.registration && <button className={classes.registerButton} onClick={registerHandler}>Register!</button>}
         </div>
       </div>
 
