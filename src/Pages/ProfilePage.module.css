@@ -62,5 +62,9 @@
     margin-bottom: 3rem;
 }
 
+.profileText{
+    display: flex;
+    flex-direction: row;
+}
 
 
