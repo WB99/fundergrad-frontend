@@ -9,7 +9,6 @@ function ProfilePage() {
   const [dataUri, setDataUri] = useState(user);
   const [userDetails, setUserDetails] = useState({});
   const textDetails = useRef();
-  const [role, setRole] = useState();
 
   useEffect(() => {
     setUserDetails(JSON.parse(localStorage.getItem("user")));

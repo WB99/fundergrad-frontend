@@ -17,6 +17,7 @@ import StudentPage from "./StudentsPage/StudentPage";
 import LoginPage from "./Pages/LoginPage";
 import { Navbar } from "react-bootstrap";
 import NavBar from "./Components/Navbar";
+import joel from "./Assets/joel.png"
 
 export const FundsContext = createContext();
 export const UsersContext = createContext();
@@ -107,16 +108,20 @@ function App() {
       degree: "Computer Science",
       year: 1,
       LI: "linkedin.com/chukang",
-      profilepic: {},
-      resume: {},
+      profilepic: joel,
+      resume: {"https://drive.google.com/file/d/1zUpmTruNMvEH03cLHr9pN1VWG1JxLXP_/view?usp=sharing"},
       role: "student"
     },
     {
       name : "Ivan Teo Meng Ern",
       email : "teoboy@gmail.com",
       password : "123456789",
-      LI: "linkedin.com/chukang",
-      profilepic: {},
+      School: "NUS",
+      degree: "Business",
+      year: "Graduated",
+      LI: "linkedin.com/meng",
+      profilepic: joel,
+      resume: {"https://drive.google.com/file/d/1zUpmTruNMvEH03cLHr9pN1VWG1JxLXP_/view?usp=sharing"},
       role: "donor"
     }
   ]
