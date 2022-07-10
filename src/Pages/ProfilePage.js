@@ -124,7 +124,7 @@ function ProfilePage() {
           {/* Right Side */}
           {userDetails.role == "student" ? (
             <div className={classes.rightPane}>
-              <ProfileForm />
+              <ProfileForm userDetails={userDetails} />
             </div>
           ) : (
             <div className={classes.rightPane}>

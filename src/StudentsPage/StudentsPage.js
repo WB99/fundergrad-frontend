@@ -7,7 +7,7 @@ import { StudentsContext } from "../App";
 function StudentsPage() {
     
     const students = useContext(StudentsContext)
-    const [newStudents, setNewStudents] = useState(students)
+    const [newStudents, setNewStudents] = useState([])
     
     useEffect(()=>{
       const user = JSON.parse(localStorage.getItem("user"));
@@ -16,16 +16,19 @@ function StudentsPage() {
         var userObject = {
             studentID: 0,
             name: user.name,
+            firstname: user.name,
             profilepic: user.profilePicUri,
             course: "Year " + user.yos + " " + user.degree + " at " + user.school,
-            description: user.desc,
-            fundusage: user.fundusage,
+            description: user.summary,
+            fundusage: "I will use the funds to cover the school fees for my remaining 2 years of studies. The excess will be used to cover my hostel fees and other miscellaneous fees.",
             amountRaised: "0",
             goal: user.fundTarget,
             progress: 0,
             linkedin: user.linkedIn,
         };
-        setNewStudents([userObject, ...newStudents])
+        setNewStudents([userObject, ...students])
+        students.push(userObject)
+        console.log("Students", students)
       }
     }, [])
 
