@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import NavBar from "../Components/Navbar";
 import classes from "./ProfilePage.module.css";
 import user from "../Assets/user.png";
-import { SignupContext } from "../App";
 
 import ProfileForm from "../Components/ProfileForm";
 
@@ -20,12 +19,11 @@ function ProfilePage() {
     text: "Click To Edit User Summary",
     isInEditMode: false,
   });
-
   const changeEditMode = () => {
     console.log("edit mode");
     setUserSummary({
-      text: userSummary.value,
-      isInEditMode: !userSummary.isInEditMode,
+      ...userSummary,
+      isInEditMode: true,
     });
   };
 
@@ -37,12 +35,12 @@ function ProfilePage() {
         isInEditMode: false,
       });
       e.preventDefault();
-      console.log(userSummary);
       setUserDetails({
         ...userDetails,
-        summary: userSummary.text,
+        summary: "Click To Edit User Summary",
         profilePicUri: dataUri,
       });
+      console.log(userSummary);
       const userInfo = JSON.stringify(userDetails);
       localStorage.setItem("user", userInfo);
       console.log(localStorage.getItem("user"));
